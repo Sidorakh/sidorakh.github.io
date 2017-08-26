@@ -1,6 +1,6 @@
 @keyframes titleColour {
-	from {color:#844};
-	to {color:#444};
+	from {color:#a66};
+	to {color:#666};
 }
 
 #pageContainer {
@@ -10,7 +10,6 @@
 	animation-iteration-count: infinite;
     animation-direction: alternate;
 	animation-timing-function: ease-in-out;
-	
 }
 .title {
 	font-style:bold;
@@ -20,6 +19,7 @@ body {
     background-color: #eee;
 	color: #444;
 	font-family:sans-serif;
+	background-image: url('../images/black-brick.jpg');
 }
 .emphasis {
 	font-style: italic;
@@ -29,3 +29,18 @@ body {
 }
 
 
+#elisus {
+	width:50%;
+}
+
+#father {
+	margin:auto;
+	position:relative;
+	top:-300px;
+}
+
+#final {
+	margin:auto;
+	position:relative;
+	top:-300px;
+}
