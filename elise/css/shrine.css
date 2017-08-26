@@ -1,0 +1,5 @@
+div#gifFrame {
+    border: 15px solid transparent;
+    padding: 15px;
+    border-image:border-image:url(images/frame2.png) 50 round;
+}
