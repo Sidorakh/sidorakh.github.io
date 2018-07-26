@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+	God's Not Dead 4 - A crowdsourced parody
+	</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="icon" type="image/png" href="favicon.png" />
+</head>
+<body>
+<div id="action-centre">
+
+	<button onclick="show_byline();">Byline</button>
+	<button onclick="show_dedication()">Dedication</button>
+	<button onclick="show_content();">Content</button>
+
+</div>
+<div id="div_byline" class="hidden">
+	<form id="add_byline" action="https://gods-not-dead-4.herokuapp.com/" method="POST" target="_blank">
+		<h1>Add Byline</h1> 
+		<input type="text" name="type" value="byline" class="hidden"> <br>
+		<label for="author"> Author: </label> <input type="text" name="author" value="Anon"> <br>
+		<input type="submit" value="Add Byline" >
+
+
+	</form>
+</div>
+	
+<div id="div_dedication" class="hidden">
+	<form id="add_dedication" action="https://gods-not-dead-4.herokuapp.com/" method="POST" target="_blank">
+		<h1>Add Dedication</h1> 
+		<input type="text" name="type" value="dedication" class="hidden"> <br>
+		<label for="name"> Name: </label> <input type="text" name="name" value=""> <br>
+		<label for="from"> From: </label> <input type="text" name="from" value=""> <br>
+		<label for="reason"> Reason: </label> <input type="text" name="reason" value=""> <br>
+		<label for="kind"> Type: </label>
+		<select name="kind">
+			<option value="invalidators">Invalidation</option>
+			<option value="dicks">Generally a dick</option>
+			<option value="other">Other</option>
+		</select>
+		<br>
+		<input type="submit" value="Add Dedication" >
+
+
+	</form>
+</div>
+
+
+<div id="div_content" class="hidden">
+	<form id="add_content" action="https://gods-not-dead-4.herokuapp.com/" method="POST" target="_blank">
+		<h1>Add Content</h1> 
+		<input type="text" name="type" value="content" class="hidden"> <br>
+		<label for="name"> Content: </label> <br> <textarea name="content" value="" class="textarea-proportional"> </textarea> <br>
+		<input type="submit" value="Add Content">
+
+
+	</form>
+</div>
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

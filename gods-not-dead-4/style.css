@@ -1,0 +1,21 @@
+body {
+    background-color: #eee;
+	color: #444;
+	font-family:sans-serif;
+	
+}
+.emphasis {
+	font-style: italic;
+}
+.code-inline {
+	font-family: monospace;
+}
+.textarea-proportional {
+	font-family: sans-serif;
+}
+* {
+	margin:4px;
+}
+.hidden {
+	display:none;
+}
