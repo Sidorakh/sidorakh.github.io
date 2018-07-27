@@ -12,7 +12,8 @@ xhttp.open("GET", "https://gods-not-dead-4.herokuapp.com/", true);
 xhttp.send();
 
 function open_reader() {
-    el_contents = document.getElementById("contents_ol");
+    el_contents_main = document.getElementById("contents_ol_main");
+    el_contents_pages = document.getElementById("contents_ol_pages");
     el_dedications = document.getElementById("dedications_tbl");
     el_content = document.getElementById("div_content");
     json = JSON.parse(json_response);
@@ -38,9 +39,12 @@ function open_reader() {
             }
             el_content.innerHTML += "<p class=\"reader-paragraph\">" + _content_addition + "</p>";
             _content_addition = "";
-            page+=1;
+            
         }
+        page+=1;
         el_content.innerHTML += "</div>";
-        
+    }
+    for (var n=1;n<page;n++) {
+        el_contents_pages.innerHTML += `<li> <a href="#reader-page-${n}"> Page ${n} </a> </li>`;
     }
 }
