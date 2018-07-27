@@ -9,7 +9,7 @@ xhttp.onreadystatechange = function() {
        document.getElementById("prev-sections").innerHTML = xhttp.responseText;
     }
 };
-xhttp.open("GET", "http://127.0.0.1:3000?getLatestSection=true", true);
+xhttp.open("GET", "https://gods-not-dead-4.herokuapp.com/getLatestSection=true", true);
 xhttp.send();
 
 function show_byline() {
