@@ -29,3 +29,7 @@ function show_content() {
     dedication.style.display="none";
     content.style.display="block";
 }
+
+function blank_form(form) {
+    form.reset();
+}

@@ -19,10 +19,10 @@
 
 </div>
 <div id="div_byline" class="hidden">
-	<form id="add_byline" action="https://gods-not-dead-4.herokuapp.com/" method="POST" target="_blank">
+	<form id="add_byline" action="https://gods-not-dead-4.herokuapp.com/" method="POST" target="_blank" onsubmit="blank_form(this);">
 		<h1>Add Byline</h1> 
 		<input type="text" name="type" value="byline" class="hidden"> <br>
-		<label for="author"> Author: </label> <input type="text" name="author" value="Anon"> <br>
+		<label for="author"> Author: </label> <input type="text" name="author" value=""> <br>
 		<input type="submit" value="Add Byline" >
 
 
@@ -30,7 +30,7 @@
 </div>
 	
 <div id="div_dedication" class="hidden">
-	<form id="add_dedication" action="https://gods-not-dead-4.herokuapp.com/" method="POST" target="_blank">
+	<form id="add_dedication" action="https://gods-not-dead-4.herokuapp.com/" method="POST" target="_blank" onsubmit="blank_form(this);">
 		<h1>Add Dedication</h1> 
 		<input type="text" name="type" value="dedication" class="hidden"> <br>
 		<label for="name"> Name: </label> <input type="text" name="name" value=""> <br>
@@ -44,14 +44,12 @@
 		</select>
 		<br>
 		<input type="submit" value="Add Dedication" >
-
-
 	</form>
 </div>
 
 
 <div id="div_content" class="hidden">
-	<form id="add_content" action="https://gods-not-dead-4.herokuapp.com/" method="POST" target="_blank">
+	<form id="add_content" action="https://gods-not-dead-4.herokuapp.com/" method="POST" target="_blank" onsubmit="blank_form(this);">
 		<h1>Add Content</h1> 
 		<input type="text" name="type" value="content" class="hidden"> <br>
 		<div id="prev-sections"></div>
