@@ -31,5 +31,5 @@ function show_content() {
 }
 
 function blank_form(form) {
-    form.reset();
+    setTimeout(function(){form.reset();},100);  //enough tiem to submit
 }
