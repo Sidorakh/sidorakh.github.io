@@ -45,3 +45,23 @@ body {
 #contents_ol_main {
 	list-style-type: lower-roman;
 }
+
+td {
+	min-width:192px;
+	text-align: center;
+	border: 1px solid #444;
+	border-collapse: collapse;
+}
+th {
+	
+	border: 1px solid #444;
+	border-collapse: collapse;
+}
+table {
+	border: 1px solid #444;
+	border-collapse: collapse;
+}
+#div_byline, #div_dedications {
+	padding: 20px;
+	margin-top:10px;
+}

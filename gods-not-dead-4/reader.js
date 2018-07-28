@@ -12,11 +12,10 @@ xhttp.open("GET", "https://gods-not-dead-4.herokuapp.com/", true);
 xhttp.send();
 
 function open_reader() {
-    el_contents_main = document.getElementById("contents_ol_main");
-    el_contents_pages = document.getElementById("contents_ol_pages");
-    el_dedications = document.getElementById("dedications_tbl");
-    el_content = document.getElementById("div_content");
-    json = JSON.parse(json_response);
+    var el_contents_main = document.getElementById("contents_ol_main");
+    var el_contents_pages = document.getElementById("contents_ol_pages");
+    var el_content = document.getElementById("div_content");
+    var json = JSON.parse(json_response);
 
     var _content_addition = "";
     var i = 0, page=1;
@@ -30,7 +29,13 @@ function open_reader() {
             }
             for (var k=0;k<_lines;k++) {
                 if (json.content[i] != undefined) {
-                    _content_addition += json.content[i] + " ";
+                    var sentence = json.content[i] + " ";
+                    sentence = sentence.trim();
+                    if (".!?".indexOf(sentence[sentence.length-1]) == -1) {
+                        sentence += "."
+                    }
+                    sentence += " ";
+                    _content_addition += sentence;
                 }
                 i+=1;
                 if (i >= json.content.length) {
@@ -46,5 +51,17 @@ function open_reader() {
     }
     for (var n=1;n<page;n++) {
         el_contents_pages.innerHTML += `<li> <a href="#reader-page-${n}"> Page ${n} </a> </li>`;
+    }
+    var el_authors = document.getElementById("authors");
+    for (var i=0;i<json.byline.length;i++) {
+        el_authors.innerHTML += `<li> ${json.byline[i]} </li>`;
+    }
+
+    var el_dedications = document.getElementById("tbl_dedications");
+
+    var list = json.dedications.invalidators.concat(json.dedications.dicks.concat(json.dedications.other));
+    for (var i=0;i<list.length;i++) {
+        var dick = list[i];
+        el_dedications.innerHTML += `<tr> <td> ${dick.name} </td> <td> ${dick.from} </td> <td> ${dick.reason} </td> </tr> `
     }
 }
