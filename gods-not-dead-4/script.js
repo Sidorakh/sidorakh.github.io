@@ -5,8 +5,17 @@ var content = document.getElementById("div_content");
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-       // Typical action to be performed when the document is ready:
-       document.getElementById("prev-sections").innerHTML = xhttp.responseText;
+        // Typical action to be performed when the document is ready:
+        //document.getElementById("prev-sections").innerHTML = xhttp.responseText;
+        json_response = xhttp.responseText;
+        json = JSON.parse(json_response);
+        var _new_string = "";
+        
+        var content = json.content;
+        for (var i = content.length-3;i<content.length;i++) {
+            _new_string += content[i] + "<br>";
+        }
+        document.getElementById("prev-sections").innerHTML = _new_string;
     }
 };
 xhttp.open("GET", "https://gods-not-dead-4.herokuapp.com/getLatestSection=true", true);
@@ -31,5 +40,14 @@ function show_content() {
 }
 
 function blank_form(form) {
-    setTimeout(function(){form.reset();},100);  //enough tiem to submit
+    //setTimeout(function(){form.reset();},100);  //enough tiem to submit
+    //After slight beration from AndrewBGM
+    form.submit();
+    form.reset();
+    //var win = window.open('https://gods-not-dead-4.herokuapp.com/', '_blank');
+    //if (win) {
+        //Browser has allowed it to be opened
+        //win.focus();
+    //}
+    return false;
 }
