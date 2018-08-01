@@ -40,14 +40,5 @@ function show_content() {
 }
 
 function blank_form(form) {
-    setTimeout(function(){form.reset();},100);  //enough tiem to submit
-    /*After slight beration from AndrewBGM
-    form.submit();
-    form.reset();
-    //var win = window.open('https://gods-not-dead-4.herokuapp.com/', '_blank');
-    //if (win) {
-        //Browser has allowed it to be opened
-        //win.focus();
-    //}
-    return false;*/
+    setTimeout(function(){form.reset();},100);  //enough time to submit
 }
