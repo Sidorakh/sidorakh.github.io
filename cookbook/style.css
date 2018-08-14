@@ -43,3 +43,12 @@ label {
 textarea {
 	font-family: sans-serif;
 }
+.field {
+	float:left;
+	min-width:100px;
+	display:block;	
+}
+.content {
+	float:right;
+	display:block;
+}
