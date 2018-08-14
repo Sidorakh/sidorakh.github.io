@@ -16,3 +16,27 @@ body {
 .hidden {
 	display:none;
 }
+label {
+	width: 100px;
+	display:inline-block;
+	padding:5px;
+	vertical-align: top;
+	text-align: left;
+}
+#ingredients {
+	min-width:20%;
+	height:150px;
+	max-height:150px;
+	min-height:150px;
+}
+#method {
+	min-width:20%;
+	height:200px;
+	min-height:200px;
+}
+#submit {
+	width:30%;
+	height:40px;
+	margin:30px;
+	font-size: 1.2em;
+}

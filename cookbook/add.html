@@ -12,10 +12,14 @@
 <h1>Spoonfuls for Spoonies, by /r/thritis</h1>
 <p>
 	<h2 id="sub"> Add a recipe here </h2>
-    <form name="recipe">
+    <form name="recipe" action="https://gods-not-dead-4.herokuapp.com" method="POST" >
             <input type="text" name="type" value="recipe" class="hidden"> <br>
-            <input type="text/css" name="recipe_name" value=""> <br>
-            
+            <label for="recipe_author"> Spoons: </label> <input type="text" name="recipe_author" value=""> <br>
+            <label for="recipe_name"> Name: </label> <input type="text" name="recipe_name" value=""> <br>
+            <label for="recipe_spoons"> Spoons: </label> <input type="number" name="recipe_spoons" value=""> <br>
+            <label for="recipe_ingredients"> Ingredients: </label> <textarea name="recipe_ingredients" id="ingredients"></textarea><br>
+            <label for="recipe_method"> Method: </label> <textarea name="recipe_method" id="method"></textarea><br>
+            <input type="submit" value="Submit" id="submit">
     </form>
 	
 </p>
