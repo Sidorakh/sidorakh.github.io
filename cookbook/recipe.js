@@ -8,7 +8,7 @@ xhttp.onreadystatechange = function() {
        load_recipes(json_response);
     }
 };
-xhttp.open("GET", "http:127.0.0.1:3000?get_recipes=true", true);
+xhttp.open("GET", "https://gods-not-dead-4.herokuapp.com?get_recipes=true", true);
 xhttp.send();
 
 function load_recipes(json) {
