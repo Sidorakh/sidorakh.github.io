@@ -10,8 +10,8 @@
 	</script>
 	<script>
 		function prepare_submission() {
-			var sub_id = document.getElementById('sub_id');
-			sub_id.value = 45;//MC.getWidget(3045808).user_ref;
+			var ref_id = document.getElementById('ref_id');
+			ref_id.value = 45;//MC.getWidget(3045808).user_ref;
 		}
 	</script>
 	
@@ -22,7 +22,7 @@
 <form action="https://vesuvio-manychat-endpoint.herokuapp.com" method="POST">
 	<p> <label for="date"> Date: </label></label><input name="date"> </p>
 	<p> <label for="time"> Time: </label></label><input name="time"> </p>
-	<p class="hidden"> <input name="sub_id" id="sub_id"> </p>
+	<p class="hidden"> <input name="ref_id" id="ref_id"> </p>
 
 
 
