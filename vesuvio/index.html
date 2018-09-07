@@ -6,22 +6,29 @@
 	</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<!-- ManyChat -->
-	<script src="//widget.manychat.com/1298683943568012.js" async="async"></script>
+	<script src="//widget.manychat.com/1298683943568012.js" async="async">
+	</script>
+	<script>
+		function prepare_submission() {
+			var sub_id = document.getElementById('sub_id');
+			sub_id.value = 45;//MC.getWidget(3045808).user_ref;
+		}
+	</script>
 	
 </head>
 <body>
 
 <h1>test time!</h1>
-<form action="">
+<form action="https://vesuvio-manychat-endpoint.herokuapp.com" method="POST">
 	<p> <label for="date"> Date: </label></label><input name="date"> </p>
 	<p> <label for="time"> Time: </label></label><input name="time"> </p>
-	
+	<p class="hidden"> <input name="sub_id" id="sub_id"> </p>
 
 
 
 
 	<div class="mcwidget-checkbox" data-widget-id="3045808"></div>
-	<button onclick="MC.getWidget(3045808).submit()">Confirm Opt-in</button>
+	<button onclick="MC.getWidget(3045808).submit();prepare_submission();" action="submit" onsubmit="return false">Confirm Opt-in</button>
 	
 
 </form>

@@ -9,3 +9,6 @@ body {
 .code-inline {
 	font-family: monospace;
 }
+.hidden {
+	display:none;
+}
