@@ -39,7 +39,7 @@
                     };
                     xhttp.open('POST', url, true);
                     xhttp.send(JSON.stringify({id:user_id,token:token}));
-                    window.location.href('https://sidorakh.github.io/vesuvio/competition.html');
+                    window.location.href = 'https://sidorakh.github.io/vesuvio/competition.html';
 
                 } else if (response.status == 'not_autorized') {
                     FB.login(function(response){},{scope:'user_posts,user_photos'});
