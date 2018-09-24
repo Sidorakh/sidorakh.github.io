@@ -28,7 +28,7 @@
             FB.getLoginStatus (function(response) {
                 if (response.status == 'connected') {
                     var user_id = response.authResponse.userID;
-                    var token = response.authResponse.accesstoken;
+                    var token = response.authResponse.accessToken;
                     var url = 'https://vesuvio-competition.herokuapp.com/fb/verify';
                     var xhttp = new XMLHttpRequest();
                     xhttp.onreadystatechange = function() {
