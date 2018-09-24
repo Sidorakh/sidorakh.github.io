@@ -29,7 +29,7 @@
                 if (response.status == 'connected') {
                     var user_id = response.authResponse.userID;
                     var token = response.authResponse.accesstoken;
-                    var url = 'https://vesuvio-competition.herokuapp.com/verify';
+                    var url = 'https://vesuvio-competition.herokuapp.com/fb/verify';
                     var xhttp = new XMLHttpRequest();
                     xhttp.onreadystatechange = function() {
                         if (this.readyState == 4 && this.status == 200) {
