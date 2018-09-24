@@ -39,7 +39,7 @@
                     };
                     xhttp.open('POST', url, true);
                     xhttp.send(JSON.stringify({id:user_id,token:token}));
-
+                    window.location.href('https://sidorakh.github.io/vesuvio/competition.html');
 
                 } else if (response.status == 'not_autorized') {
                     FB.login(function(response){},{scope:'user_posts,user_photos'});
@@ -54,12 +54,8 @@
             Log in with Facebook to enter the competition <br>
         </p>
         <div>
-            <div class="fb-login-button" data-scope='user_posts,user_photos' data-width="400" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-use-continue-as="true"></div>
+            <div class="fb-login-button" on-login="" data-scope='user_posts,user_photos' data-width="400" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-use-continue-as="true"></div>
         </div>
-        <div style="display:inline">
-            <button class="loginBtn loginBtn--facebook">
-                Login with Facebook
-            </button>
     </div>
 </body>
 
