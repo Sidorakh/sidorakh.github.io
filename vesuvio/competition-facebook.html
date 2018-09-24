@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title> Document </title>
+    
+</head>
+
+<body>
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+            appId            : '2328200973862220',
+            autoLogAppEvents : true,
+            xfbml            : true,
+            version          : 'v3.1'
+            });
+        };
+        
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        function get_login_state() {
+            FB.getLoginStatus (function(response) {
+                if (response.status == 'connected') {
+                    var user_id = response.authResponse.userID;
+                    var token = response.authResponse.accesstoken;
+                    var url = 'https://vesuvio-competition.herokuapp.com';
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                            document.getElementById('id').innerHTML = 'You have been reigstered in the competition successfully. You may now close this window';
+                            window.close();
+                        }
+                    };
+                    xhttp.open('POST', url, true);
+                    xhttp.send(JSON.stringify({id:user_id,token:token}));
+
+
+                } else if (response.status == 'not_autorized') {
+                    FB.login();
+                } else if (response.status == 'unknown') {
+                    FB.login();
+                }
+            });
+        }
+    </script>
+    <p id='body'>
+        Log in with facebook to enter the competition <br>
+        <fb:login-button 
+        scope="public_profile,email"
+        onlogin="checkLoginState();">
+        </fb:login-button>
+    </p>
+
+</body>
+
+</html>
