@@ -4,6 +4,10 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <title> Document </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        document.getelementById('return').innerHTML = window.location.href;
+
+    </script>
 </head>
 
 <body>
@@ -13,7 +17,7 @@
             Log in with Instagram to enter the competition <br>
         </p>
         <div>
-                https://api.instagram.com/oauth/authorize/?client_id=947abadec6ef48d2953397ce02958cb3&redirect_uri=https://sidorakh.github.io/vesuvio/competition-instagram.html&response_type=code
+                https://api.instagram.com/oauth/authorize/?client_id=947abadec6ef48d2953397ce02958cb3&redirect_uri=https%3A%2F%2Fsidorakh.github.io%2Fvesuvio%2Fcompetition-instagram.html&response_type=code
 
         </div>
         <div id='return'> </div>
