@@ -23,6 +23,11 @@
     </div>
     <script>
         document.getElementById('return').innerHTML = window.location.href;
+        function get(name){
+            if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(window.location.search)) {
+                return decodeURIComponent(name[1]);
+            }
+        }
         function enter_comp() {
             var url = 'https://vesuvio-competition.herokuapp.com/ig/';
             var xhttp = new XMLHttpRequest();
