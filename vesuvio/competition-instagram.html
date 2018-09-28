@@ -24,7 +24,7 @@
     <script>
         document.getElementById('return').innerHTML = window.location.href;
         function enter_comp() {
-            var url = 'https://vesuvio-competition.herokuapp.com/ig_id=';
+            var url = 'https://vesuvio-competition.herokuapp.com';
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
@@ -33,6 +33,8 @@
                     //window.close();
                 }
             };
+            xhttp.open('POST', url, true);
+            xhttp.send(JSON.stringify({code:get('code'),sub_id:get('sub_id')}));
         }
     </script>
 </body>
