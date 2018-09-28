@@ -8,6 +8,12 @@
 
 <body>
     <script>
+        function get(name){
+            if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(window.location.search)) {
+                return decodeURIComponent(name[1]);
+            }
+        }
+
         window.fbAsyncInit = function() {
             FB.init({
             appId            : '2328200973862220',
@@ -27,6 +33,7 @@
         function get_login_state() {
             FB.getLoginStatus (function(response) {
                 if (response.status == 'connected') {
+                    
                     var user_id = response.authResponse.userID;
                     var token = response.authResponse.accessToken;
                     var url = 'https://vesuvio-competition.herokuapp.com/fb/verify';
