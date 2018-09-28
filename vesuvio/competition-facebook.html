@@ -36,7 +36,7 @@
                     
                     var user_id = response.authResponse.userID;
                     var token = response.authResponse.accessToken;
-                    var url = 'https://vesuvio-competition.herokuapp.com/fb/verify';
+                    var url = 'https://vesuvio-competition.herokuapp.com/fb/verify' + get('sub_id');
                     var xhttp = new XMLHttpRequest();
                     xhttp.onreadystatechange = function() {
                         if (this.readyState == 4 && this.status == 200) {
