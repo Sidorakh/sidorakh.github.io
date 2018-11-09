@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title> Document </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <script>
+        function get(name){
+            if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(window.location.search)) {
+                return decodeURIComponent(name[1]);
+            }
+        }
+
+        window.fbAsyncInit = function() {
+            FB.init({
+            appId            : '2328200973862220',
+            autoLogAppEvents : true,
+            xfbml            : true,
+            version          : 'v3.1'
+            });
+        };
+        
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        function get_login_state() {
+            FB.getLoginStatus (function(response) {
+                if (response.status == 'connected') {
+                    
+                    var user_id = response.authResponse.userID;
+                    var token = response.authResponse.accessToken;
+                    var url = 'https://vesuvio-competition.herokuapp.com/fb/verify';
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                            document.getElementById('return').innerHTML = this.responseText;
+                            console.log(`recieved: ${this.resonseText}`);
+                            //window.close();
+                        }
+                    };
+                    xhttp.open('POST', url, true);
+                    xhttp.send(JSON.stringify({id:user_id,token:token,sub_id:get('sub_id')}));
+                    //window.location.href = 'https://sidorakh.github.io/vesuvio/competition.html';
+
+                } else if (response.status == 'not_autorized') {
+                    FB.login(function(response){},{scope:'user_posts,user_photos'});
+                } else if (response.status == 'unknown') {
+                    FB.login(function(response){},{scope:'user_posts,user_photos'});
+                }
+            });
+        }
+    </script>
+    <div id="main" style="width:600px">
+        <p id='body' style='font-size:1.1em'>
+            Connect your Optus account to Facebook to continue <br>
+        </p>
+		<a href="end.html">
+        <div>
+            <div class="fb-login-button" onlogin='get_login_state();' data-scope='user_posts,user_photos' data-width="400" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-use-continue-as="true"></div>
+        </div>
+		</a>
+        <div id='return'> </div>
+    </div>
+</body>
+
+</html>
