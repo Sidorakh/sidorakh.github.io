@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                background-color: #eee;
+                color: #444;
+                font-family:sans-serif;
+            }
+            .emphasis {
+                font-style: italic;
+            }
+            .code-inline {
+                font-family: monospace;
+            }
+            .box {
+                height:100px;
+                display:inline-block;
+                user-select: none;
+                text-align:center;
+            }
+            .center {
+                text-align:center;
+            }
+            td {
+                width:20%;
+                /*border: 1px solid black;*/
+                text-align:center;
+            }
+            table {
+                width:100%;
+                height:90vh;
+            }
+        </style>
+        <script>
+            window.onload = function() {
+                var b64 = window.location.search;
+                b64 = decodeURIComponent(b64.replace('?grid=',''));
+                console.log(`url=${b64}`);
+                var json = window.atob(b64);
+                var grid = JSON.parse(json);
+                console.log(json);
+                for (var x=0;x<5;x++) {
+                    for (var y=0;y<5;y++) {
+                        var elem = document.getElementById(`txt${x*5 + y}`);
+                        elem.innerText = grid[x][y];
+                    }
+                }
+
+            }
+            function click_div(div) {
+                if (div.style.backgroundColor == "rgb(255, 187, 187)") {
+                    div.style.backgroundColor = "#EEEEEE";
+                } else {
+                    div.style.backgroundColor = "#FFBBBB";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <table>
+            <tr class="row">
+                <td onclick="click_div(this)"> <div class="box" id="txt0"> </div> </td>
+                <td onclick="click_div(this)"> <div class="box" id="txt1"> </div> </td>
+                <td onclick="click_div(this)"> <div class="box" id="txt2"> </div> </td>
+                <td onclick="click_div(this)"> <div class="box" id="txt3"> </div> </td>
+                <td onclick="click_div(this)"> <div class="box" id="txt4"> </div> </td>
+            </tr>  
+            <tr class="row">  
+                <td onclick="click_div(this)"> <div class="box" id="txt5"> </div> </td>
+                <td onclick="click_div(this)"> <div class="box" id="txt6"> </div> </td>
+                <td onclick="click_div(this)"> <div class="box" id="txt7"> </div> </td>
+                <td onclick="click_div(this)"> <div class="box" id="txt8"> </div> </td>
+                <td onclick="click_div(this)"> <div class="box" id="txt9"> </div> </td>
+            </tr>
+            <tr class="row">
+                <td onclick="click_div(this)"> <div class="box" id="txt10"> </div> </td>
+                <td onclick="click_div(this)"> <div class="box" id="txt11"> </div> </td>
+                <td onclick="click_div(this)"> <div class="box" id="txt12"> </div> </td>
+                <td onclick="click_div(this)"> <div class="box" id="txt13"> </div> </td>
+                <td onclick="click_div(this)"> <div class="box" id="txt14"> </div> </td>
+            </tr> 
+            <tr class="row"> 
+                <td onclick="click_div(this)"> <div class="box" id="txt15"> </div> </td>
+                <td onclick="click_div(this)"> <div class="box" id="txt16"> </div> </td>
+                <td onclick="click_div(this)"> <div class="box" id="txt17"> </div> </td>
+                <td onclick="click_div(this)"> <div class="box" id="txt18"> </div> </td>
+                <td onclick="click_div(this)"> <div class="box" id="txt19"> </div> </td>
+            </tr> 
+            <tr class="row"> 
+                <td onclick="click_div(this)"> <div class="box" id="txt20"> </div> </td>
+                <td onclick="click_div(this)"> <div class="box" id="txt21"> </div> </td>
+                <td onclick="click_div(this)"> <div class="box" id="txt22"> </div> </td>
+                <td onclick="click_div(this)"> <div class="box" id="txt23"> </div> </td>
+                <td onclick="click_div(this)"> <div class="box" id="txt24"> </div> </td>
+            </tr>
+        </table>
+    </body>
+</html>
