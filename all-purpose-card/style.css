@@ -1,0 +1,33 @@
+body {
+  font-family:sans-serif;
+}
+.title {
+  font-size:2em;
+  font-weight:bolder;
+  text-align:center;
+}
+
+.flexy {
+  display:flex;
+}
+.flexy-item {
+  flex: 0 1 auto;
+}
+.flexy-pad {
+  flex: 1 0 auto;
+}
+.left {
+  text-align:left;
+}
+.right {
+  text-align:right;
+}
+.half {
+  width:50%;
+}
+.max-width-25 {
+  max-width:25%;
+}
+width-100 {
+  width:100%;
+}
