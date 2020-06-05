@@ -1,52 +1,82 @@
-let chk = {}
-chk.chk_happy = document.querySelector('#chk-happy');
-chk.chk_merry = document.querySelector('#chk-merry');
-chk.chk_speedy = document.querySelector('#chk-speedy');
-chk.chk_tolerable = document.querySelector('#chk-tolerable');
-chk.chk_birthday = document.querySelector('#chk-birthday');
-chk.chk_anniversary = document.querySelector('#chk-anniversary');
-chk.chk_christmas = document.querySelector('#chk-christmas');
-chk.chk_recovery = document.querySelector('#chk-speedy');
-chk.chk_other_desc = document.querySelector('#chk-other-desc');
-chk.chk_other_event = document.querySelector('#chk-other-event');
-chk.chk_other_person = document.querySelector('#chk-other-person');
+let chk = []
+// descriptions
+chk[0] = document.querySelector('#chk-happy');
+chk[1] = document.querySelector('#chk-merry');
+chk[2] = document.querySelector('#chk-speedy');
+chk[3] = document.querySelector('#chk-tolerable');
+chk[4] = document.querySelector('#chk-other-desc');
+// events
+chk[5] = document.querySelector('#chk-birthday');
+chk[6] = document.querySelector('#chk-anniversary');
+chk[7] = document.querySelector('#chk-christmas');
+chk[8] = document.querySelector('#chk-recovery');
+chk[9] = document.querySelector('#chk-other-event');
+// recipients
+chk[10] = document.querySelector('#chk-parent');
+chk[11] = document.querySelector('#chk-child');
+chk[12] = document.querySelector('#chk-grandparent');
+chk[13] = document.querySelector('#chk-grandchild');
+chk[14] = document.querySelector('#chk-friend');
+chk[15] = document.querySelector('#chk-lover');
+chk[16] = document.querySelector('#chk-spouse');
+chk[17] = document.querySelector('#chk-other-person');
+
+
+const chk_other_desc = document.querySelector('#chk-other-desc');
+const chk_other_event = document.querySelector('#chk-other-event');
+const chk_other_person = document.querySelector('#chk-other-person');
 function defoc() {
-  chk.chk_other_desc.checked = true;
+  chk_other_desc.checked = true;
 }
 function evfoc() {
-  chk.chk_other_event.checked = true;
+  chk_other_event.checked = true;
 }
 function opfoc() {
-  chk.chk_other_person.checked = true;
-  document.querySelector('#hash').innerText = window.location.hash;
+  chk_other_person.checked = true;
 }
 function save() {
-  const od = document.querySelector('#ode');
-  const oe = document.querySelector('#oev');
-  const op = document.querySelector('#ope');
-    const obj = {
-      other_desc:od.value,
-      other_event:oe.value,
-      other_person:op.value
+    const od = document.querySelector('#ode');
+    const oe = document.querySelector('#oev');
+    const op = document.querySelector('#ope');
+    const desc = document.querySelector(`input[name=desc]:checked`);
+    const event = document.querySelector(`input[name=event]:checked`);
+    const person = document.querySelector(`input[name=person]:checked`);
+    let fragment = `desc=${desc.id}&event=${event.id}&person=${person.id}`;
+    if (desc.id=='chk-other-desc') {
+        fragment += `&desc-text=${encodeURIComponent(od.value).replace(/'/g, "%27")}`;
     }
-    for (const key in chk) {
-        obj[key] = chk[key].checked;
+    if (event.id=='chk-other-event') {
+        fragment += `&event-text=${encodeURIComponent(oe.value).replace(/'/g, "%27")}`;
     }
-    return btoa(JSON.stringify(obj));
+    if (person.id=='chk-other-person') {
+        fragment += `&person-text=${encodeURIComponent(op.value).replace(/'/g, "%27")}`;
+    }
+    return fragment;
+
 }
 
 window.onload = ()=>{
-    console.log(window.location.hash);
     if (window.location.hash) {
-        const str = atob(window.location.hash.substr(1));
-        const obj = JSON.parse(str);
-        document.querySelector('#ode').value = obj.other_desc;
-        document.querySelector('#oev').value = obj.other_event;
-        document.querySelector('#ope').value = obj.other_person;
-        for (const key in chk) {
-            chk[key].checked = obj[key];
+        const od = document.querySelector('#ode');
+        const oe = document.querySelector('#oev');
+        const op = document.querySelector('#ope');
+        const str = window.location.hash.substr(1)
+        const fs = new URLSearchParams(str);
+        for (const [key, value] of fs) {
+            switch (key) {
+                case 'desc-text':
+                    od.value = value;
+                break;
+                case 'event-text':
+                    oe.value = value;
+                break;
+                case 'person-text':
+                    op.value = value;
+                break;
+                default:
+                    document.querySelector(`#${value}`).checked = true;
+            }
         }
-        console.log(obj);
     }
 }
 
