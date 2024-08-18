@@ -8,7 +8,7 @@
     },
     {
         "name": "Chocolatier",
-        "description": "Create deliciously good live wallpapers for Oepra GX, Lively Wallpaper, and Wallpaper Engine!",
+        "description": "Create deliciously good live wallpapers for Opera GX, Lively Wallpaper, and Wallpaper Engine!",
         "license": "MIT",
         "repo": "https://github.com/sidorakh/chocolatier",
         "docs": "https://docs.sidorakh.net/chocolatier"
