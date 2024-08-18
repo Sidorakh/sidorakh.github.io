@@ -1,0 +1,44 @@
+[
+    {
+        "name": "http.gml",
+        "description": "A simple http request handler for GameMaker",
+        "license": "MIT",
+        "repo": "https://github.com/sidorakh/http.gml",
+        "docs": "https://docs.sidorakh.net/http.gml"
+    },
+    {
+        "name": "Chocolatier",
+        "description": "Create deliciously good live wallpapers for Oepra GX, Lively Wallpaper, and Wallpaper Engine!",
+        "license": "MIT",
+        "repo": "https://github.com/sidorakh/chocolatier",
+        "docs": "https://docs.sidorakh.net/chocolatier"
+    },
+    {
+        "name": "activity.gml",
+        "description": "A Discord Embedded Activity SDK for GameMaker",
+        "license": "MIT",
+        "repo": "https://github.com/Sidorakh/activity.gml",
+        "docs": "https://docs.sidorakh.net/activity.gml"
+    },
+    {
+        "name": "progressify",
+        "description": "Automatically turn your GameMAker HTML5 games into progressive web applications!",
+        "license": "MIT",
+        "repo": "https://github.com/Sidorakh/progressify",
+        "docs": "https://github.com/Sidorakh/progressify"
+    },
+    {
+        "name": "haptics.gml",
+        "description": "Vibrations/haptics library for Android and HTML5",
+        "license": "MIT",
+        "repo": "https://github.com/Sidorakh/haptics.gml",
+        "docs": "https://github.com/Sidorakh/haptics.gml"
+    },
+    {
+        "name": "Custom Tabs",
+        "description": "Use Custom Tabs in your GameMaker Android games",
+        "license": "MIT",
+        "repo": "https://github.com/Sidorakh/custom-tabs",
+        "docs": "https://github.com/Sidorakh/custom-tabs"
+    }
+]
