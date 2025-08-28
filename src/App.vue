@@ -18,7 +18,7 @@
           </v-card-text>
             <v-row>
               <v-col v-for="(repo,i) in repositories" cols="6" :key="`repo${i}`">
-                <v-card>
+                <v-card :min-height="200">
                   <v-card-title> {{ repo.name }} </v-card-title>
                   <v-card-subtitle> License: {{ repo.license }} </v-card-subtitle>
                   <v-card-text>

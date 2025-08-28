@@ -7,11 +7,25 @@
         "docs": "https://docs.sidorakh.net/http.gml"
     },
     {
+        "name": "WASM Bridge",
+        "description": "Run JavaScript in your Web Assembly games",
+        "license": "MIT",
+        "repo": "https://github.com/Sidorakh/wasm-bridge/",
+        "docs": "https://docs.sidorakh.net/wasm-bridge"
+    },
+    {
         "name": "Chocolatier",
         "description": "Create deliciously good live wallpapers for Opera GX, Lively Wallpaper, and Wallpaper Engine!",
         "license": "MIT",
         "repo": "https://github.com/sidorakh/chocolatier",
         "docs": "https://docs.sidorakh.net/chocolatier"
+    },
+    {
+        "name": "uuid.gml",
+        "description": "Helper functions for workign with UUIDs in your games",
+        "license": "MIT",
+        "repo": "https://github.com/Sidorakh/uuid.gml",
+        "docs": "https://github.com/Sidorakh/uuid.gml"
     },
     {
         "name": "activity.gml",
@@ -22,23 +36,23 @@
     },
     {
         "name": "progressify",
-        "description": "Automatically turn your GameMAker HTML5 games into progressive web applications!",
+        "description": "Automatically turn your GameMaker HTML5 games into progressive web applications!",
         "license": "MIT",
         "repo": "https://github.com/Sidorakh/progressify",
-        "docs": "https://github.com/Sidorakh/progressify"
+        "docs": "https://github.com/Sidorakh/progressify/blob/main/README.md"
     },
     {
         "name": "haptics.gml",
         "description": "Vibrations/haptics library for Android and HTML5",
         "license": "MIT",
         "repo": "https://github.com/Sidorakh/haptics.gml",
-        "docs": "https://github.com/Sidorakh/haptics.gml"
+        "docs": "https://github.com/Sidorakh/haptics.gml/blob/main/README.md"
     },
     {
         "name": "Custom Tabs",
-        "description": "Use Custom Tabs in your GameMaker Android games",
+        "description": "Use Custom Tabs in your Android games",
         "license": "MIT",
         "repo": "https://github.com/Sidorakh/custom-tabs",
-        "docs": "https://github.com/Sidorakh/custom-tabs"
+        "docs": "https://github.com/Sidorakh/custom-tabs/blob/main/README.md"
     }
 ]
